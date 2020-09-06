@@ -1,6 +1,7 @@
 import 'package:book_reader_app/books/book_model.dart';
 import 'package:book_reader_app/ui_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 /// description:
 /// project: book_reader_app
@@ -40,6 +41,7 @@ class FilterScreen extends ModalRoute with UiKit {
     Animation<double> animation,
     Animation<double> secondaryAnimation,
   ) {
+    timeDilation = 1.0;
     // This makes sure that text and other content follows the material style
     return Material(
       type: MaterialType.transparency,

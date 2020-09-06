@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 
 class FilterScreen extends ModalRoute with UiKit {
   @override
-  Duration get transitionDuration => Duration(milliseconds: 500);
+  Duration get transitionDuration => Duration(milliseconds: 600);
 
   @override
   bool get opaque => false;
@@ -20,7 +20,7 @@ class FilterScreen extends ModalRoute with UiKit {
   bool get barrierDismissible => false;
 
   @override
-  Color get barrierColor => Color(0xff456CE4).withOpacity(.9);
+  Color get barrierColor => Colors.black.withOpacity(.1);
 
   @override
   String get barrierLabel => null;
@@ -44,9 +44,7 @@ class FilterScreen extends ModalRoute with UiKit {
     return Material(
       type: MaterialType.transparency,
       // make sure that the overlay content is not cut off
-      child: SafeArea(
-        child: _buildOverlayContent(context),
-      ),
+      child: _buildOverlayContent(context),
     );
   }
 
@@ -54,7 +52,10 @@ class FilterScreen extends ModalRoute with UiKit {
     return Hero(
       tag: "container",
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 40, horizontal: 15),
+        color: Color(0xff456CE4).withOpacity(.9),
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.symmetric(vertical: 50, horizontal: 15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

@@ -99,8 +99,62 @@ class _BookListWidgetState extends State<BookListWidget> with UiKit{
                       width(3),
                       Icon(Icons.star, size: 15, color: Color(0xffFBD73C),),
                       width(3),
-                      Icon(Icons.star, size: 15, color: Color(0xffFBD73C),),
+                      Icon(Icons.star, size: 15, color: Color(0xffFEF0B7),),
+                      width(5),
+                      Text("${item.rating}",
+                        style: TextStyle(
+                            fontFamily: "AHeavy",
+                            fontSize: 12,
+                            color: Color(0xffFBD73C))
+                        ),
                     ],
+                  ),
+                  height(10),
+                  Container(
+                    width: 200,
+                    child: Stack(
+                      children: [
+                        CircleAvatar(
+                          radius: 15,
+                          backgroundImage: AssetImage("images/face_1.jpg"),
+                        ),
+                        Positioned(
+                          left: 25,
+                          child: CircleAvatar(
+                            radius: 15,
+                            backgroundImage: AssetImage("images/face_2.jpg"),
+                          ),
+                        ),
+                        Positioned(
+                          left: 50,
+                          child: CircleAvatar(
+                            radius: 15,
+                            backgroundImage: AssetImage("images/face_3.jpg"),
+                          ),
+                        ),
+                        Positioned(
+                          left: 75,
+                          child: Container(
+                            width: 30,
+                            height: 30,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.grey,
+                              border: Border.all(color: Colors.white, width: 1)
+                            ),
+                            child: Center(
+                              child: Text("32+",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 11,
+                                  fontFamily: "AHeavy"
+                                ),
+                              ),
+                            ),
+                          )
+                        )
+                      ],
+                    ),
                   )
 
                 ],
